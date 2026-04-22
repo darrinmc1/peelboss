@@ -1,0 +1,222 @@
+{
+  "disengaged-employee": {
+    "id": "disengaged-employee",
+    "title": "The Disengaged Employee",
+    "description": "Alex, a previously high-performing team member, has become withdrawn. They miss meetings, ship late, and barely speak up. As their manager, you need to have a conversation.",
+    "topicId": "performance-management",
+    "completionBadgeId": "performance-management-sprout",
+    "hub": {
+      "difficulty": "Intermediate",
+      "topicLabel": "1:1 Meetings",
+      "thumbnail": null,
+      "premium": false
+    },
+    "persona": {
+      "name": "Alex",
+      "role": "Senior Analyst on your team",
+      "avatar": "🧑‍💻",
+      "context": "For the past six weeks, Alex has gone from your most reliable analyst to your most quiet. Their Jira tickets are slipping. They sit through stand-ups with their camera off. You've just scheduled a 1:1 — they're now sitting across from you. They look tired. How do you open?"
+    },
+    "learningObjectives": [
+      "Use curiosity over judgment to open difficult conversations",
+      "Distinguish coaching questions from interrogation",
+      "Avoid the 'fix-it' reflex when an employee needs to be heard",
+      "Close with commitments both parties own"
+    ],
+    "maxScore": 30,
+    "passingScore": 18,
+    "startNodeId": "open",
+    "xpReward": 150,
+    "estimatedMinutes": 6,
+    "nodes": {
+      "open": {
+        "id": "open",
+        "speaker": "narrator",
+        "message": "Alex sits down. Small smile, shoulders tight. The room is quiet. You have one chance to set the tone of this conversation.",
+        "choices": [
+          {
+            "id": "empathetic",
+            "text": "\"Hey Alex — thanks for making time. I've noticed things feel a bit different lately and I wanted to check in. How are you doing, honestly?\"",
+            "scoreDelta": 5,
+            "feedback": "Strong opening. You named what you observed without accusing, and you invited honesty. This is how trust gets built.",
+            "nextNodeId": "alex-opens-up",
+            "tone": "supportive"
+          },
+          {
+            "id": "direct-performance",
+            "text": "\"Alex, your delivery has dropped this quarter. I need to understand what's going on and what you plan to do about it.\"",
+            "scoreDelta": -3,
+            "feedback": "This opener frames Alex as the problem to be solved. It may get compliance, but it rarely gets truth.",
+            "nextNodeId": "alex-defensive",
+            "tone": "direct"
+          },
+          {
+            "id": "small-talk",
+            "text": "\"So — busy week? Anyway, let's run through the sprint status.\"",
+            "scoreDelta": -2,
+            "feedback": "Dodging the real conversation signals you either don't see the issue or don't want to deal with it. Both are a problem.",
+            "nextNodeId": "alex-shuts-down",
+            "tone": "avoidant"
+          }
+        ]
+      },
+
+      "alex-opens-up": {
+        "id": "alex-opens-up",
+        "speaker": "character",
+        "message": "Alex exhales. \"Honestly? I feel invisible here. I've been grinding for two years and every time I raise my hand for the bigger projects, they go to someone else. I'm not sure this is where I should be anymore.\"",
+        "choices": [
+          {
+            "id": "validate-probe",
+            "text": "\"That sounds really frustrating. Tell me more — which moments stand out for you?\"",
+            "scoreDelta": 5,
+            "feedback": "Excellent. You validated the feeling AND invited specifics. Feelings without facts are hard to act on; this question gets you both.",
+            "nextNodeId": "alex-growth",
+            "tone": "coaching"
+          },
+          {
+            "id": "defend-team",
+            "text": "\"I hear you, but those projects went to people with more experience in that area. It's not personal.\"",
+            "scoreDelta": -2,
+            "feedback": "Even if factually true, leading with a defense tells Alex their experience of the situation is wrong. You've closed the door they just opened.",
+            "nextNodeId": "alex-withdraws",
+            "tone": "defensive"
+          },
+          {
+            "id": "jump-to-fix",
+            "text": "\"Okay — I'll talk to HR about a development plan for you. Let's get you on the next big project.\"",
+            "scoreDelta": 0,
+            "feedback": "You went straight to solutions before understanding the problem. Alex may accept it, but the underlying trust issue is still there.",
+            "nextNodeId": "alex-lukewarm",
+            "tone": "direct"
+          }
+        ]
+      },
+
+      "alex-defensive": {
+        "id": "alex-defensive",
+        "speaker": "character",
+        "message": "Alex crosses their arms. \"I'm doing the best I can. The priorities keep changing and nobody tells me anything until it's late. If you want to write me up, just do it.\"",
+        "choices": [
+          {
+            "id": "reset-tone",
+            "text": "\"I'm sorry — I came in too hard. I'm not trying to write you up. I'm trying to understand what's going on, because the Alex I worked with a year ago isn't who I'm seeing right now.\"",
+            "scoreDelta": 4,
+            "feedback": "A real recovery. Naming the misstep and restating your intent can un-escalate. Many managers can't do this — it's a genuine skill.",
+            "nextNodeId": "alex-opens-up",
+            "tone": "supportive"
+          },
+          {
+            "id": "double-down",
+            "text": "\"This isn't about writing you up, it's about results. I need to see different numbers next month.\"",
+            "scoreDelta": -3,
+            "feedback": "Doubling down on performance language confirms Alex's fear that this is a pre-PIP conversation. Walls go up. Information goes dark.",
+            "nextNodeId": "ending-failure",
+            "tone": "direct"
+          }
+        ]
+      },
+
+      "alex-shuts-down": {
+        "id": "alex-shuts-down",
+        "speaker": "character",
+        "message": "Alex gives a flat \"sure\" and walks you through the sprint in a monotone. Nothing is wrong. Nothing is right. You leave the room knowing less than when you walked in.",
+        "isEnding": true,
+        "endingType": "failure",
+        "feedback": "You avoided the conversation that needed to happen. Alex will likely either disengage further or leave — and you won't know why until the exit interview. When the human signal is loud, the sprint board can wait."
+      },
+
+      "alex-growth": {
+        "id": "alex-growth",
+        "speaker": "character",
+        "message": "Alex leans in a little. \"The Meridian project — I pitched an angle for it and heard nothing back. Two weeks later Jordan got it. I don't need to win every time, but I'd like to know what I should be doing differently, or if there's even a path here for me.\"",
+        "choices": [
+          {
+            "id": "own-gap-collaborate",
+            "text": "\"That feedback loop failed and that's on me — I should have closed it with you either way. Let's spend the rest of this time mapping out what growth looks like for you, and I'll commit to specific check-ins.\"",
+            "scoreDelta": 6,
+            "feedback": "You owned the gap, validated their agency, and moved to co-created next steps. This is the conversation repairing itself.",
+            "nextNodeId": "ending-success",
+            "tone": "coaching"
+          },
+          {
+            "id": "empty-promise",
+            "text": "\"I hear you. Don't worry — I'll make sure you get the next big one.\"",
+            "scoreDelta": -1,
+            "feedback": "Promises you can't guarantee feel good in the moment and hurt later. If the 'next big one' goes elsewhere for legitimate reasons, you've broken trust again.",
+            "nextNodeId": "ending-partial",
+            "tone": "supportive"
+          },
+          {
+            "id": "honest-boundary",
+            "text": "\"I can't promise you the next project. What I can promise is that you'll know where you stand, and we'll build a real plan together. Would that help?\"",
+            "scoreDelta": 5,
+            "feedback": "Boundary + commitment is underrated. You didn't overpromise and you didn't dodge. This is usually the most sustainable answer.",
+            "nextNodeId": "ending-success",
+            "tone": "coaching"
+          }
+        ]
+      },
+
+      "alex-withdraws": {
+        "id": "alex-withdraws",
+        "speaker": "character",
+        "message": "Alex nods slowly. \"Right. Okay.\" They look at the clock. The energy is gone from the room.",
+        "choices": [
+          {
+            "id": "try-to-recover",
+            "text": "\"Wait — I just pushed back instead of listening. Can we rewind? What I actually want to know is what you're seeing that I'm not.\"",
+            "scoreDelta": 3,
+            "feedback": "Not a full repair, but a meaningful attempt. Alex may not fully open back up today, but you've shown you can self-correct — and that matters more over time than being right in the moment.",
+            "nextNodeId": "ending-partial",
+            "tone": "supportive"
+          },
+          {
+            "id": "end-awkwardly",
+            "text": "\"Anyway — let's keep an eye on things and circle back next week.\"",
+            "scoreDelta": -2,
+            "feedback": "You closed the conversation without closing the loop. Alex now has evidence that speaking up doesn't change anything.",
+            "nextNodeId": "ending-failure",
+            "tone": "avoidant"
+          }
+        ]
+      },
+
+      "alex-lukewarm": {
+        "id": "alex-lukewarm",
+        "speaker": "character",
+        "message": "Alex nods. \"Okay. Thanks, I guess.\" They agree to the plan, but their expression hasn't really changed.",
+        "isEnding": true,
+        "endingType": "partial",
+        "feedback": "You moved into solution mode too fast. The development plan might help, but you skipped the step where Alex felt heard — which is usually the real currency. Watch for this 'fix-it reflex' in future conversations: the urge to resolve often serves the manager, not the employee."
+      },
+
+      "ending-success": {
+        "id": "ending-success",
+        "speaker": "narrator",
+        "message": "Alex stands up with real energy for the first time in weeks. \"Thanks — this helped more than I expected. Same time next week?\"",
+        "isEnding": true,
+        "endingType": "success",
+        "feedback": "You did the hard work: curiosity first, defense never, ownership where it was yours, and a plan you can actually both keep. This is what great 1:1s look like. The proof is in the follow-through — but you've earned the right to have it."
+      },
+
+      "ending-partial": {
+        "id": "ending-partial",
+        "speaker": "narrator",
+        "message": "The conversation ends on steadier ground than it started, but the air isn't fully clear. Alex will give it another week before deciding what they really think.",
+        "isEnding": true,
+        "endingType": "partial",
+        "feedback": "You recovered from a rough moment — which is more than most managers do. Next time, try to lead with curiosity before defense. Alex is still watching to see if you meant what you said."
+      },
+
+      "ending-failure": {
+        "id": "ending-failure",
+        "speaker": "narrator",
+        "message": "Alex leaves the room looking exactly like they walked in — but quieter. Their next move is probably LinkedIn.",
+        "isEnding": true,
+        "endingType": "failure",
+        "feedback": "This conversation reinforced every concern Alex already had. The goal of a disengagement 1:1 is not to assert your authority — it's to make reality speakable. When in doubt, ask one more question before offering one more answer."
+      }
+    }
+  }
+}

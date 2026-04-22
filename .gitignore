@@ -1,0 +1,12 @@
+node_modules
+.next
+.env
+.env.local
+.env*.local
+.local.env
+*.local.env
+tsconfig.tsbuildinfo
+.vercel
+.DS_Store
+/data/subscribers.json
+/data/feedback.json
