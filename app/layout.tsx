@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { NextAuthProvider } from "@/components/next-auth-provider"
 import { PanicButton } from "@/components/panic-button"
+import { WaitlistPopup } from "@/components/waitlist-popup"
 
 export const metadata: Metadata = {
   title: "Peel Boss - From Sprout to Golden Leadership",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body>
         <NextAuthProvider>
           {children}
+          <WaitlistPopup />
           <PanicButton />
         </NextAuthProvider>
       </body>
